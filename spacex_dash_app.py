@@ -68,7 +68,7 @@ def get_pie_chart(entered_site):
 # Add a callback function for `site-dropdown` and `payload-slider` as inputs, `success-payload-scatter-chart` as output
 @app.callback(Output(component_id='success-payload-scatter-chart', component_property='figure'),
               [Input(component_id='site-dropdown', component_property='value'), Input(component_id="payload-slider", component_property="value")])
-def get_pie_chart(entered_site,slider):
+def get_scatter_plot(entered_site,slider):
     filtered_df = spacex_df[['Launch Site','Payload Mass (kg)','class','Booster Version Category']]
     low, high = slider
     if entered_site == 'ALL':
